@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Exam Seating Arranger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="hero">
+    <p class="eyebrow">DAA CAPSTONE PROJECT</p>
+    <h1>Smart Exam Seating Arranger</h1>
+    <p>Recursive backtracking for configurable exam seating.</p>
+</header>
+
+<main class="container">
+    <section class="card">
+        <h2>Exam Setup</h2>
+        <p class="muted">Choose the grid size and number of subjects.</p>
+
+        <div class="controls">
+            <label>Grid Size
+                <input id="gridSize" type="number" min="1" max="10" value="5">
+            </label>
+
+            <label>Number of Subjects
+                <input id="subjectCount" type="number" min="1" max="10" value="4">
+            </label>
+
+            <button id="createSubjects" class="secondary">Create Subject Fields</button>
+        </div>
+
+        <div id="subjectFields"></div>
+
+        <button id="generate" class="primary">Generate Seating Arrangement</button>
+        <p id="message" class="message"></p>
+    </section>
+
+    <section id="resultSection" class="card hidden">
+        <h2>Seating Plan</h2>
+        <p id="resultSummary" class="muted"></p>
+        <div id="grid" class="seat-grid"></div>
+        <div id="legend" class="legend"></div>
+    </section>
+</main>
+
+<footer>Recursive Backtracking • Grid Constraint Problem • Exam Seating</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
